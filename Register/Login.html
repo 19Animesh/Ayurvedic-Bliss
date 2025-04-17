@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="login.css">
+
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>        <!--https://boxicons.com/ -->
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <title>Login & Register Page  ->> Code With Patel</title>
+</head>
+
+<body>
+
+    <div class="container" id="container">
+        <div class="form-container sign-up">
+            <form>
+                <h1>Create Account</h1>
+                <div class="social-icons">
+                <div id="g_id_onload"
+                    data-client_id="229080451211-oepacfvuf0h0e6nudg3mgrr2q5c12542.apps.googleusercontent.com"
+                    data-callback="handleCredentialResponse"
+                    data-auto_prompt="false">
+                </div>
+
+                <div class="g_id_signin"
+                    data-type="standard"
+                    data-shape="rectangular"
+                    data-theme="outline"
+                    data-text="sign_in_with"
+                    data-size="large"
+                     data-logo_alignment="left">
+                </div>
+
+                  </div>                  
+                <span>Register with E-mail</span>
+                <input type="text" placeholder="Name">
+                <input type="email" placeholder="Enter E-mail">
+                <input type="password" placeholder="Enter Password">
+                <button>Sign Up</button>
+            </form>
+        </div>
+
+
+        <div class="form-container sign-in"  >
+            <form>
+                <h1>Sign In</h1>
+                <div class="social-icons">
+                    <div id="g_id_onload"
+                    data-client_id="229080451211-oepacfvuf0h0e6nudg3mgrr2q5c12542.apps.googleusercontent.com"
+                    data-callback="handleCredentialResponse"
+                    data-auto_prompt="false">
+                </div>
+
+                <div class="g_id_signin"
+                    data-type="standard"
+                    data-shape="rectangular"
+                    data-theme="outline"
+                    data-text="sign_in_with"
+                    data-size="large"
+                     data-logo_alignment="left">
+                </div>
+                </div>
+                <span>Login With Email & Password</span>
+                <input type="email" placeholder="Enter E-mail">
+                <input type="password" placeholder="Enter Password">
+                <a href="#">Forget Password?</a>
+                <button>Sign in</button>
+            </form>
+        </div>
+
+
+        <div class="toggle-container">
+            <div class="toggle">
+                <div class="toggle-panel toggle-left">
+                    <h1>Welcome To <br>Ayurvedic Bliss</h1>
+                    <p>Sign in With ID & Passowrd</p>
+                    <button class="hidden" id="login">Sign In</button>
+                </div>
+                <div class="toggle-panel toggle-right">
+                    <h1>Ayurvedic Bliss</h1>
+                    <p>A place where you can find all your ayurvedic medicine at one place</p>
+                    <button class="hidden" id="register">Sign Up</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

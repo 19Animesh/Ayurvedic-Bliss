@@ -1,0 +1,11 @@
+{
+	"folders": [
+		{
+			"name": "Ayurvedic Bliss",
+			"path": "."
+		}
+	],
+	"settings": {
+		"liveServer.settings.port": 5501
+	}
+}

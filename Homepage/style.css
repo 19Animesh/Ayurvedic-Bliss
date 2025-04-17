@@ -1,0 +1,323 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+}
+
+body{
+    overflow-x: hidden;
+}
+.container{
+    width:100%;
+}
+header{
+    position: fixed;
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    z-index: 1000;
+}
+nav{
+    width: 100vw;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #103A00;
+    top: 0px;
+    z-index: 999;
+}
+.search{
+    background-color: #B7BF96;
+    float: left;
+    align-items: center;
+    border-radius: 10px;
+    display: flex;
+    height: 3rem;
+    width: 500px;
+    margin: 10px 100px;
+}
+.search input{
+    position: relative;
+    float: left;
+    border: none;
+    height: 100%;
+    width: 90%;
+    border-radius: 10px 0 0 10px;
+    font-size: 15px;
+    padding-left: 20px;
+}
+#srchIcon{
+    color: black;
+    font-size: 25px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+#srchBox:focus{ outline: none; }
+input[type="search"]::-webkit-search-cancel-button { display: none; }
+
+#navMenu{
+    list-style: none;
+    display: flex;
+    float: right;
+    width: 350px;
+    line-height: 50px;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+#navMenu li a{
+    color: white; 
+     font-size: 20px;
+}
+.hero {
+    display: inline-block; 
+    vertical-align: top;
+    height: 55vh; 
+    width: 100rem;
+    overflow: hidden; 
+    margin-top: 5.3rem;
+    margin-right: 20px; 
+}
+.mainPage{
+    width: 100vw;
+    height: 100vh;
+}
+
+.logo{
+    height: 10rem;
+    width: 15rem;
+}
+.neechewala{
+    background-color: #08260e;
+    display: flex;
+    width: 100%;
+    height: 10rem;
+    justify-content: space-evenly;
+}
+.socialmedia-handels{
+    font-size: 1.7rem;
+    display: block;
+    color: #ddd;
+}
+ul h3{
+    color: whitesmoke;
+}
+.fmenu{
+    display: block;
+    color: white;
+    text-decoration: none;
+    margin-top: 7px;
+    font-size: large;
+}
+#cart{
+    position: relative;
+    border-radius: 10px;
+    padding: 5px;
+}
+.cart-amount{
+    background-color: red;
+    position: absolute;
+    top: 1rem;
+    right: 16rem;
+    border-radius: 4px;
+    font-size: 1rem;
+    padding: 2px;
+    color: white;
+}
+.scroll-wrapper {
+    width: 100%;
+    height: 320px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    position: relative;
+  }
+  
+  .scroll-track {
+    display: flex;
+  }
+  
+  .child {
+    width: 630px;
+    height: 300px;
+    color: white;
+    font-size: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+  }
+  .product-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 250px;
+    height: 450px; /* same height for all cards */
+    padding: 16px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    text-align: center;
+    background: white;
+  }
+  
+  .product-card img {
+    height: 180px;  /* Uniform image height */
+    width: auto;
+    object-fit: contain;
+    margin-bottom: 12px;
+  }
+  
+  .product-card h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 8px 0;
+  }
+  
+  .product-card p {
+    font-size: 14px;
+    color: #444;
+    flex-grow: 1; /* Stretch the description to fill space */
+    margin: 0 0 12px 0;
+  }
+  
+  .product-card .price {
+    font-size: 18px;
+    font-weight: bold;
+    color: #008000;
+    margin: 8px 0;
+  }
+  
+  .product-card button {
+    background-color: #1f4f2b;
+    color: white;
+    border: none;
+    padding: 10px 0;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+  }
+  .product-card button:hover {
+    background-color: #2d703e;
+  }
+  .product-card:hover{
+    transition: all 0.5s ease-out;
+    transform: scale(1.09);
+    box-shadow: rgb(120, 118, 118);
+  }
+  /* Flex container for all product cards */
+  .products-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+  .hidden {
+    display: none !important;
+  }
+/* === Responsive Layout Fixes === */
+@media (max-width: 1024px) {
+  .search {
+    width: 60%;
+    margin: 0 auto;
+  }
+
+  #navMenu {
+    width: 100%;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .logo {
+    height: 6rem;
+    width: 10rem;
+  }
+
+  .cart-amount {
+    right: 4rem;
+  }
+
+  .hero {
+    width: 100%;
+    height: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    height: auto;
+    padding: 1rem 0;
+  }
+
+  .search {
+    width: 90%;
+    margin: 1rem auto;
+  }
+
+  #navMenu {
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 1rem;
+  }
+
+  .products-container {
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+  }
+
+  .product-card {
+    width: 90%;
+    max-width: 300px;
+  }
+
+  .hero {
+    height: auto;
+  }
+
+  .scroll-wrapper {
+    height: auto;
+    flex-direction: column;
+  }
+
+  .child {
+    width: 100%;
+    height: auto;
+  }
+
+  .neechewala {
+    flex-direction: column;
+    height: auto;
+    gap: 20px;
+    padding: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .product-card h3 {
+    font-size: 16px;
+  }
+
+  .product-card p {
+    font-size: 13px;
+  }
+
+  .product-card .price {
+    font-size: 16px;
+  }
+
+  .product-card button {
+    font-size: 14px;
+    padding: 8px 0;
+  }
+
+  .cart-amount {
+    top: 0.5rem;
+    right: 2rem;
+    font-size: 0.8rem;
+    padding: 1px 5px;
+  }
+}
