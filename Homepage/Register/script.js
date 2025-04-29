@@ -35,17 +35,29 @@ document.getElementById('signup-form').addEventListener('submit', async (e) => {
   const password = document.getElementById('signup-password').value;
 
   try {
-    const res = await fetch('http://localhost:5501/api/users/signup', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ username: name, email, password })
-    });
+      const res = await fetch('http://localhost:8080/api/users/signup', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ 
+              firstName: name.split(' ')[0],
+              lastName: name.split(' ')[1] || '',
+              email, 
+              password 
+          })
+      });
 
-    const data = await res.json();
-    alert(data.message || "Signup successful!");
+      const data = await res.json();
+      if (data.token) {
+          localStorage.setItem('token', data.token);
+          alert(data.message || "Signup successful!");
+          // Redirect to dashboard or home page
+          window.location.href = '/dashboard.html';
+      } else {
+          alert(data.message || "Signup failed.");
+      }
   } catch (err) {
-    alert("Signup failed.");
-    console.error(err);
+      alert("Signup failed. Please try again.");
+      console.error(err);
   }
 });
 
@@ -57,21 +69,23 @@ document.getElementById('signin-form').addEventListener('submit', async (e) => {
   const password = document.getElementById('signin-password').value;
 
   try {
-    const res = await fetch('http://localhost:5501/api/users/login', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ email, password })
-    });
+      const res = await fetch('http://localhost:8080/api/users/login', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email, password })
+      });
 
-    const data = await res.json();
-    if (data.token) {
-      localStorage.setItem('token', data.token);
-      alert("Login successful!");
-    } else {
-      alert(data.error || "Login failed.");
-    }
+      const data = await res.json();
+      if (data.token) {
+          localStorage.setItem('token', data.token);
+          alert(data.message || "Login successful!");
+          // Redirect to dashboard or home page
+          window.location.href = '/dashboard.html';
+      } else {
+          alert(data.message || "Login failed.");
+      }
   } catch (err) {
-    alert("Login failed.");
-    console.error(err);
+      alert("Login failed. Please try again.");
+      console.error(err);
   }
 });
